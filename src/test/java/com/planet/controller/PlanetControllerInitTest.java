@@ -1,6 +1,8 @@
 package com.planet.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
 import java.io.UnsupportedEncodingException;
 
@@ -28,6 +30,20 @@ class PlanetControllerInitTest {
 		RequestBuilder request = MockMvcRequestBuilders.get("/");
 		MvcResult result = mvc.perform(request).andReturn();
 		assertEquals("Hello jupiter", result.getResponse().getContentAsString() );
+	}
+	
+	@Test
+	public void testWthParameter() throws Exception {
+		mvc.perform(get("/?planetName=Pluto"))
+		.andExpect(content().string("Hello Pluto"));
+		
+	}
+	
+	@Test
+	public void testWthParameter2() throws Exception {
+		mvc.perform(get("/?planetName=pluto"))
+		.andExpect(content().string("Hello pluto"));
+		
 	}
 
 }
