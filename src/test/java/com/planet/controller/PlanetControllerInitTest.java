@@ -51,6 +51,15 @@ class PlanetControllerInitTest {
 		mvc.perform(get("/?planetName=dluto"))
 		.andExpect(content().string("Hello dluto"));
 		
+		
 	}
+	
+	@Test
+	public void testWthParametere3() throws Exception {
+		mvc.perform(get("/?planetName=dluto"))
+		.andExpect(content().string("Hello dluto"));
+		
+	}
+
 
 }
