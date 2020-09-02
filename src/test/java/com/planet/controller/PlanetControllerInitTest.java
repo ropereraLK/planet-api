@@ -40,6 +40,13 @@ class PlanetControllerInitTest {
 	}
 	
 
+	@Test
+	public void testWthParamedter() throws Exception {
+		mvc.perform(get("/?planetName=Pluto"))
+		.andExpect(content().string("Hello Pluto"));
+		
+	}
+
 	
  
  
