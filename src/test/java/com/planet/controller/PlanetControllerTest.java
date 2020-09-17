@@ -11,7 +11,7 @@ class PlanetControllerTest {
 	
 	
 
-	@RepeatedTest(300)
+	@RepeatedTest(30)
 	void test() {
 
 		PlanetController pc = new PlanetController();
